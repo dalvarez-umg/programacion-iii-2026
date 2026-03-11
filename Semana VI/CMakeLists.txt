@@ -3,4 +3,5 @@ project(Semana_VI)
 
 set(CMAKE_CXX_STANDARD 20)
 
-add_executable(Semana_VI main.cpp)
+add_executable(Semana_VI main.cpp
+        testing.cpp)
