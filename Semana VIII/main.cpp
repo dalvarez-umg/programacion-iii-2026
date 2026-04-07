@@ -66,6 +66,7 @@ int main() {
     int opcion, valor;
 
     do {
+        system("clr");
         cout << "\n===== MENU PILA =====" << endl;
         cout << "1. Push (Insertar)" << endl;
         cout << "2. Pop (Eliminar)" << endl;
