@@ -114,6 +114,14 @@ void preOrden(Nodo* raiz) {
     }
 }
 
+void postOrden(Nodo* raiz) {
+    if (raiz != nullptr) {
+        postOrden(raiz->izquierda);
+        postOrden(raiz->derecha);
+        cout << raiz->dato << " ";
+    }
+}
+
 int main() {
     Nodo* raiz = nullptr;
 
@@ -129,6 +137,9 @@ int main() {
 
     cout << "\nRecorrido PreOrden: ";
     preOrden(raiz);
+
+    cout << "\nPostOrden: ";
+    postOrden(raiz);
 
     return 0;
 }
