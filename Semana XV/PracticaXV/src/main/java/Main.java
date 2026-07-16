@@ -5,7 +5,7 @@ public class Main {
     public static void main(String[] args) {
 
         String archivo = "clientes.csv";
-        int cantidadClientes = 1_000;
+        int cantidadClientes = 2_000_000;
 
         System.out.println("======================================");
         System.out.println("LABORATORIO: PROCESAMIENTO MASIVO");
