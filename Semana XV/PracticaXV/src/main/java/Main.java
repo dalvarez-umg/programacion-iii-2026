@@ -5,10 +5,11 @@ public class Main {
     public static void main(String[] args) {
 
         String archivo = "clientes.csv";
-        int cantidadClientes = 500_000;
+        int cantidadClientes = 1_000;
 
         System.out.println("======================================");
         System.out.println("LABORATORIO: PROCESAMIENTO MASIVO");
+        System.out.println("Estudiante: David Alvarez");
         System.out.println("======================================");
 
         System.out.println("\nGenerando archivo...");
@@ -17,8 +18,8 @@ public class Main {
         GeneradorClientes.generarArchivo(archivo, cantidadClientes);
 
         long finGeneracion = System.currentTimeMillis();
-        System.out.println("Tiempo de generación: " + (finGeneracion - inicioGeneracion) + " ms");
 
+        System.out.println("Tiempo de generación: " + (finGeneracion - inicioGeneracion) + " ms");
         mostrarMemoria();
 
         System.out.println("\nCargando TODOS los clientes en memoria...");
@@ -30,12 +31,20 @@ public class Main {
 
         System.out.println("Clientes cargados en memoria: " + clientes.size());
         System.out.println("Tiempo de carga: " + (finCarga - inicioCarga) + " ms");
-
         mostrarMemoria();
 
-        System.out.println("\nProcesando con estructura INEFICIENTE...");
-        ProcesadorIneficiente.procesar(clientes);
+        System.out.println("\n======================================");
+        System.out.println("VERSIÓN INEFICIENTE");
+        System.out.println("======================================");
 
+        ProcesadorIneficiente.procesar(clientes);
+        mostrarMemoria();
+
+        System.out.println("\n======================================");
+        System.out.println("VERSIÓN OPTIMIZADA CON HASHMAP");
+        System.out.println("======================================");
+
+        ProcesadorOptimizado.procesar(clientes);
         mostrarMemoria();
 
         System.out.println("\nFin del programa.");
